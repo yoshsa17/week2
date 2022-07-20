@@ -25,11 +25,13 @@ describe("MerkleTree", function () {
     });
 
     it("Insert two new leaves and verify the first leaf in an inclusion proof", async function () {
-        await merkleTree.insertLeaf(1);
-        await merkleTree.insertLeaf(2);
+         await merkleTree.insertLeaf(1);
+         await merkleTree.insertLeaf(2);
 
         const node9 = (await merkleTree.hashes(9)).toString();
         const node13 = (await merkleTree.hashes(13)).toString();
+        // console.log(node9);
+        // console.log(node13);
 
         const Input = {
             "leaf": "1",
